@@ -36,14 +36,17 @@ class HomeScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             final note = taskController.notes[index];
             return ListTile(
-              title: Text(note.note!),
+              title: Text(
+                note.note!,
+                style: const TextStyle(color: Colors.black),
+              ),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
                     icon: const Icon(Icons.edit),
                     onPressed: () {
-
+                      taskController.updateData(note);
                     },
                   ),
                   IconButton(
@@ -81,7 +84,8 @@ class HomeScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       if (controller.text.isNotEmpty) {
-                        NotesModel newNote = NotesModel(note: controller.text, id: null);
+                        NotesModel newNote =
+                            NotesModel(note: controller.text, id: null);
                         taskController.addData(newNote);
                         Get.back();
                       }
