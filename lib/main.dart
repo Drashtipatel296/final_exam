@@ -1,4 +1,3 @@
-import 'package:final_exam/view/home/home_screen.dart';
 import 'package:final_exam/view/splash/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

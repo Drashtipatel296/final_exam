@@ -7,7 +7,7 @@ class NotesModel{
   factory NotesModel.fromMap(Map json){
     return NotesModel(
       id: json['id'],
-      note: json['note'] ?? 'work',
+      note: json['note'],
     );
   }
 

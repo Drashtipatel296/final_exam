@@ -41,6 +41,7 @@ dependencies:
   path: any
   google_fonts: any
   sqflite: any
+  cloud_firestore: ^5.4.4
 
 dev_dependencies:
   flutter_test:

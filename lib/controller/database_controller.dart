@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 class NotesController extends GetxController {
   var notes = <NotesModel>[].obs;
+  var likedNotes = <NotesModel>[].obs;
   final DatabaseHelper dbHelper = DatabaseHelper();
 
   @override
@@ -29,5 +30,17 @@ class NotesController extends GetxController {
   void deleteData(int id) async {
     await dbHelper.delete(id);
     fetchData();
+  }
+
+  // Add note to likedNotes list
+  void likeNote(NotesModel note) {
+    if (!likedNotes.contains(note)) {
+      likedNotes.add(note);
+    }
+  }
+
+  // Remove note from likedNotes list
+  void unlikeNote(NotesModel note) {
+    likedNotes.remove(note);
   }
 }
